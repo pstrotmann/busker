@@ -11,9 +11,8 @@ class Experiment implements Comparable {
     int noOfRoundsPlayed
 
     SortedSet placesToPlay, rounds
-    static hasMany = [placesToPlay: PlaceToPlay, busker:Busker, rounds: Round]
-
-    static belongsTo = [expGroup: ExpGroup]
+    static hasMany = [placesToPlay: PlaceToPlay, rounds: Round]
+    static belongsTo = [expGroup: ExpGroup, busker:Busker]
 
     static constraints = {
         expNo()
@@ -41,6 +40,7 @@ class Experiment implements Comparable {
                                 paymentsEarned: 0,
                                 experiment:this)
         b.save()
+        Experiment.executeUpdate("update Experiment e set e.busker = ${b} where e.id = ${id}")
         for (i in 1..<noOfPlacesToPlay+1) {
             PlaceToPlay ptp =
             new PlaceToPlay  (placeNo:i,

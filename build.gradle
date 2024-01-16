@@ -35,6 +35,7 @@ configurations {
 dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     compileOnly "io.micronaut:micronaut-inject-groovy"
+    compileOnly fileTree(dir: 'lib', include: ['*.jar'])
     console "org.grails:grails-console"
     implementation "org.springframework.boot:spring-boot-starter-logging"
     implementation "org.springframework.boot:spring-boot-starter-validation"
@@ -58,12 +59,16 @@ dependencies {
     implementation "org.hibernate:hibernate-core:5.6.9.Final"
     implementation "org.grails.plugins:gsp"
     implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '5.2.5'
+    implementation fileTree(dir: 'lib', include: ['*.jar'])
     profile "org.grails.profiles:web"
     runtimeOnly "org.glassfish.web:el-impl:2.2.1-b05"
     runtimeOnly "com.h2database:h2"
     runtimeOnly "org.apache.tomcat:tomcat-jdbc"
     runtimeOnly "javax.xml.bind:jaxb-api:2.3.1"
     runtimeOnly "com.bertramlabs.plugins:asset-pipeline-grails:3.4.6"
+    runtimeOnly "org.grails.plugins:async:4.0.0"
+    runtimeOnly "org.grails.plugins:events:4.0.0"
+    runtimeOnly "org.grails:grails-events-rxjava:4.0.0"
     testImplementation "io.micronaut:micronaut-inject-groovy"
     testImplementation "org.grails:grails-gorm-testing-support"
     testImplementation "org.mockito:mockito-core"

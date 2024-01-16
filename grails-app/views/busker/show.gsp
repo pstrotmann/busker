@@ -28,6 +28,7 @@
                     <ul>
                         <li><g:message message="noOfRounds:" /><f:display bean="busker" property="noOfRounds"/></li>
                         <li><g:message message="regret:" /><f:display bean="busker" property="regret"/></li>
+                        <li><g:message message="avgRegret:" /><f:display bean="busker" property="avgRegret"/></li>
                     </ul>
 
                     <g:form resource="${this.busker}" method="DELETE">

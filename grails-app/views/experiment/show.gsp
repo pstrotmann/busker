@@ -16,10 +16,10 @@
                         <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
                         <li><g:link class="controller" controller="PlaceToPlay" action="index" >PlacesToPlay</g:link></li>
                         <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-                        <li><g:link class="controller" controller="Experiment" action="run1" id="${this.experiment.id}">run1</g:link></li>
-                        <li><g:link class="controller" controller="Experiment" action="run10" id="${this.experiment.id}">run10</g:link></li>
-                        <li><g:link class="controller" controller="Experiment" action="run100" id="${this.experiment.id}">run100</g:link></li>
-                        <li><g:link class="controller" controller="Experiment" action="run1000" id="${this.experiment.id}">run1000</g:link></li>
+                        <li><g:link class="controller" controller="Experiment" action="run1" id="${this.experiment.id}">1 round</g:link></li>
+                        <li><g:link class="controller" controller="Experiment" action="run10" id="${this.experiment.id}">10 rounds</g:link></li>
+                        <li><g:link class="controller" controller="Experiment" action="run100" id="${this.experiment.id}">100 rounds</g:link></li>
+                        <li><g:link class="controller" controller="Experiment" action="run1000" id="${this.experiment.id}">1000 rounds</g:link></li>
                     </ul>
                 </div>
             </section>

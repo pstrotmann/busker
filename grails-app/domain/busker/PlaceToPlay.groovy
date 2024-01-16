@@ -1,6 +1,7 @@
 package busker
 
 import javax.transaction.Transactional
+import org.apache.commons.math3.distribution.NormalDistribution
 
 @Transactional
 class PlaceToPlay implements Comparable {
@@ -30,7 +31,8 @@ class PlaceToPlay implements Comparable {
     }
 
     BigDecimal pay () {
-        BigDecimal payment = randDec(0, 2 * meanPayment)
+        NormalDistribution normalDistribution = new NormalDistribution(meanPayment, meanPayment/2)
+        BigDecimal payment = normalDistribution.inverseCumulativeProbability(Math.random())
         sumPaid += payment
         timesPlayed++
         perRoundPayment = sumPaid/timesPlayed

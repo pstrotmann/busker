@@ -68,6 +68,10 @@ class Busker {
         return experiment.maxReward * experiment.noOfRoundsPlayed - paymentsEarned
     }
 
+    BigDecimal getAvgRegret() {
+        return noOfRounds > 0 ? regret/noOfRounds : 0
+    }
+
     int getNoOfRounds () {
         roundsPlayed.size()
     }
